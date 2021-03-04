@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --no-source-map",
+    "dev": "webpack --mode development",
     "start": "webpack serve --mode development --open ",
     "prod": "webpack --config webpack.prod.js"
   },
