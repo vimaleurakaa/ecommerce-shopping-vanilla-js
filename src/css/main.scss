@@ -1,5 +1,119 @@
+@import "./partials/resets";
+@import "./partials/grid";
+@import "./partials/mixins.scss";
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+//Colors
+$primary_text: #48cab2;
+$grey_text: #888888;
+$dark_text: #333333;
+$light_gray: #ebebeb;
+
+//
 body {
   background-color: bisque;
-  background: url("../assets/images/pexels-deepu-b-iyer-40465.jpg") center;
   background-size: cover;
+}
+
+nav {
+  /***offer nav bar***/
+  & .offer_info {
+    background-color: #fff;
+    border-bottom: 2px solid $light_gray;
+  }
+
+  & .offer_items {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 12px;
+    margin: 0 24px;
+    font-size: 14px;
+  }
+
+  & .offer_item {
+    color: $grey_text;
+    & .offer_text {
+      cursor: pointer;
+      color: $dark_text;
+      font-weight: 600;
+      position: relative;
+
+      &::before {
+        @include hoverUnderline($dark_text);
+      }
+      &:hover::before {
+        @include hoverScale;
+      }
+    }
+    & .offer_discover {
+      color: $primary_text;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+
+      &::before {
+        @include hoverUnderline($primary_text);
+      }
+      &:hover::before {
+        @include hoverScale;
+      }
+    }
+
+    & .offer_social_link {
+      position: relative;
+      margin: 0 16px;
+      text-decoration: none;
+      color: $grey_text;
+
+      &::before {
+        @include hoverUnderline($dark_text);
+      }
+
+      &:hover::before {
+        @include hoverScale;
+      }
+    }
+  }
+
+  /***menu navigation desktop***/
+  .nav_bar {
+    display: flex;
+    text-align: center;
+    background-color: #fff;
+    align-items: center;
+    padding: 18px 0;
+
+    & .nav_utils {
+      display: flex;
+      justify-content: flex-end;
+
+      & .util_icon {
+        font-size: 23px;
+        margin: 0 18px;
+      }
+    }
+
+    & .brand_logo img {
+      max-width: 160px;
+    }
+  }
+
+  .secondary_nav {
+    background-color: #fff;
+
+    & .secondary_nav_items {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 18px;
+    }
+
+    & .sec_nav_item {
+      margin: 0 16px;
+      text-decoration: none;
+    }
+  }
 }
