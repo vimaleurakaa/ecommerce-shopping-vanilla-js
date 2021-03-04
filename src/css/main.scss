@@ -31,11 +31,12 @@ nav {
     align-items: center;
     padding: 12px;
     margin: 0 24px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   & .offer_item {
     color: $grey_text;
+
     & .offer_text {
       cursor: pointer;
       color: $dark_text;
@@ -85,21 +86,26 @@ nav {
     text-align: center;
     background-color: #fff;
     align-items: center;
-    padding: 18px 0;
+    padding: 12px 0;
 
     & .nav_utils {
       display: flex;
       justify-content: flex-end;
 
       & .util_icon {
-        font-size: 23px;
+        font-size: 20px;
         margin: 0 18px;
       }
     }
 
     & .brand_logo img {
-      max-width: 160px;
+      max-width: 140px;
     }
+  }
+
+  .nav_active {
+    font-weight: 500;
+    color: $primary_text;
   }
 
   .secondary_nav {
@@ -114,6 +120,97 @@ nav {
     & .sec_nav_item {
       margin: 0 16px;
       text-decoration: none;
+      font-size: 14px;
+      position: relative;
+
+      &::before {
+        @include hoverUnderline($primary_text);
+      }
+
+      &:hover::before {
+        @include hoverScale;
+      }
     }
+  }
+}
+
+.slider_container {
+  position: relative;
+}
+
+.slides {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 0.5s;
+  display: none;
+  position: relative;
+
+  & .slides_captions {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-10%, -50%);
+
+    & .slides_title_1 {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    & .slides_title_2 {
+      font-size: 42px;
+      padding: 16px 0px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    & .slides_title_3 {
+      color: #fff;
+      text-transform: none;
+    }
+
+    & .slides_btn {
+      margin: 30px 0;
+      padding: 10px 0;
+      & a {
+        background-color: $primary_text;
+        text-decoration: none;
+        padding: 10px 16px;
+        color: #fff;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $dark_text;
+        }
+      }
+    }
+  }
+
+  & .slides_images img {
+    width: 100%;
+  }
+}
+
+.banner_dot_container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-bottom: 16px;
+  transform: translate(-50%);
+
+  & .banner_dot {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    background: #ffffff33;
+    padding: 4px;
+    margin: 0 2px;
+  }
+
+  & .slider_active {
+    background: #fff;
   }
 }

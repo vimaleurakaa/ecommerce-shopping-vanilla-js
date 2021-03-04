@@ -1,9 +1,8 @@
 import "../css/main.scss";
+import "./utils/sliderControls";
 
-const images = require.context(
+const img = require.context(
   "../assets/images",
   false,
   /\.(png|svg|jpg|jpeg|gif)$/
 );
-
-console.log("hello");
