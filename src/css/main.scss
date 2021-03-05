@@ -13,6 +13,8 @@ $dark_text: #333333;
 $light_gray: #ebebeb;
 $light_red: #ff905a;
 $faded_white: #f1f1f1;
+$pink_heart: #f41cb2;
+$footer_gray: #f7f8fa;
 
 .spacer {
   padding: 60px 0;
@@ -337,6 +339,7 @@ nav {
 
   & .product_image img {
     width: 100%;
+    transition: transform 0.4s ease;
   }
 
   & .product_title {
@@ -375,13 +378,22 @@ nav {
   &:hover {
     box-shadow: 0 2px 16px 4px #282c3f12;
   }
+
+  &:hover .product_meta_info {
+    bottom: 0;
+  }
+
+  &:hover .product_image img {
+    @include imageScaleHover;
+  }
 }
 
 .product_meta_info {
   background-color: #fff;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
+  transition: all 0.2s;
 
   & .product_wishlist {
     background-color: #fff;
@@ -394,9 +406,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.1s ease;
 
     &:hover {
-      color: red;
+      color: #fff;
+      background-color: $pink_heart;
     }
   }
 
@@ -428,4 +442,100 @@ nav {
       color: #fff;
     }
   }
+}
+
+.browse_more {
+  text-align: center;
+  margin: 22px;
+
+  & a {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 10px 60px;
+    transition: all 0.2s;
+    border: 1px solid $grey_text;
+
+    &:hover {
+      color: #fff;
+      background-color: $dark_text;
+    }
+  }
+}
+
+.title_promo {
+  margin: 80px 0 20px 0;
+}
+
+.promotion_banner img {
+  cursor: pointer;
+  width: 100%;
+}
+
+footer {
+  background-color: $footer_gray;
+  padding: 97px 0 74px 0;
+}
+
+.newsletter_container {
+  text-align: center;
+
+  & .newsletter_title {
+    font-size: 16px;
+    line-height: 26px;
+    color: $dark-gray;
+    padding: 0 0 18px 0;
+    font-weight: 500;
+  }
+
+  & .newsletter_form input {
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    padding: 3px 49px 3px 12px;
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    color: $grey_text;
+    position: relative;
+  }
+}
+.newsletter_form {
+}
+
+.newsletter_form button {
+  position: absolute;
+  left: 0;
+}
+
+.buttonInside {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 25px;
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+button {
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  border: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  padding: 2px;
+}
+button:hover {
+  cursor: pointer;
 }
