@@ -9,64 +9,12 @@
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
     ></script>
+    <!-- CSS only -->
   </head>
 
   <body>
-    <!-- Navigation Menu -->
-    <nav>
-      <div class="row">
-        <div class="offer_info">
-          <ul class="offer_items">
-            <li class="offer_item col-4">
-              Call Us: <span class="offer_text">+91 000 000 00</span>
-            </li>
-            <li class="offer_item col-4">
-              <span class="offer_text">50% off</span> on all new collection!
-              <a class="offer_discover">Discover Now!</a>
-            </li>
-            <li class="offer_item col-4">
-              <a class="offer_social_link" href="#">Facebook</a>
-              <a class="offer_social_link" href="#">Twitter</a>
-              <a class="offer_social_link" href="#">Instagram</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="nav_bar">
-          <div class="col-4">
-            <div>Lang</div>
-          </div>
+    <div id="nav"></div>
 
-          <div class="brand_logo col-4">
-            <img src="./assets/images/logo.jpg" all="logo" />
-          </div>
-
-          <div class="nav_utils col-4">
-            <a href="#" class="util_icon">
-              <ion-icon name="search-outline"></ion-icon>
-            </a>
-            <a href="#" class="util_icon">
-              <ion-icon name="heart-outline"></ion-icon>
-            </a>
-            <a href="#" class="util_icon">
-              <ion-icon name="person-outline"></ion-icon>
-            </a>
-            <a href="#" class="util_icon">
-              <ion-icon name="bag-outline"></ion-icon>
-            </a>
-          </div>
-        </div>
-        <div class="secondary_nav">
-          <div class="secondary_nav_items col-12">
-            <a href="#" class="sec_nav_item nav_active">Home</a>
-            <a href="#" class="sec_nav_item">Shop</a>
-            <a href="#" class="sec_nav_item">Men's</a>
-            <a href="#" class="sec_nav_item">Women's</a>
-          </div>
-        </div>
-      </div>
-    </nav>
     <!-- END OF Navigation Menu -->
     <!-- Banner Slider -->
     <div class="slider_container">
@@ -172,109 +120,12 @@
 
     <div class="container">
       <div class="row">
-        <!---------------------- Product Card -------------------------------->
-        <div class="col-4">
-          <div class="product_card_container">
-            <a href="#prod">
-              <div class="product_image">
-                <img src="./assets/images/product_demo_1.jpg" />
-                <!-- Product META -->
-                <div class="product_meta_info">
-                  <div class="product_wishlist">
-                    <ion-icon name="heart-outline"></ion-icon>
-                  </div>
-                  <div class="product_add_to">
-                    <p><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
-                  </div>
-                </div>
-                <!-- END OF Product META -->
-              </div>
-              <!-- Product Desc -->
-              <div class="product_description">
-                <div class="product_title">Mast & Harbour</div>
-                <div class="product_details">Men Casual Shirt</div>
-                <div class="product_price_container">
-                  <p class="product_price">Rs.899</p>
-                  <p class="product_discount">Rs.1599</p>
-                  <p class="product_offer">Rs.(45% OFF)</p>
-                </div>
-              </div>
-              <!--END OF Product Desc -->
-            </a>
-          </div>
-        </div>
-        <!---------------------- END OF Product Card ------------------------->
-
-        <!---------------------- Product Card -------------------------------->
-        <div class="col-4">
-          <div class="product_card_container">
-            <a href="#prod">
-              <div class="product_image">
-                <img src="./assets/images/product_demo_1.jpg" />
-                <!-- Product META -->
-                <div class="product_meta_info">
-                  <div class="product_wishlist">
-                    <ion-icon name="heart-outline"></ion-icon>
-                  </div>
-                  <div class="product_add_to">
-                    <p><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
-                  </div>
-                </div>
-                <!-- END OF Product META -->
-              </div>
-              <!-- Product Desc -->
-              <div class="product_description">
-                <div class="product_title">Mast & Harbour</div>
-                <div class="product_details">Men Casual Shirt</div>
-                <div class="product_price_container">
-                  <p class="product_price">Rs.899</p>
-                  <p class="product_discount">Rs.1599</p>
-                  <p class="product_offer">Rs.(45% OFF)</p>
-                </div>
-              </div>
-              <!--END OF Product Desc -->
-            </a>
-          </div>
-        </div>
-        <!---------------------- END OF Product Card ------------------------->
-
-        <!---------------------- Product Card -------------------------------->
-        <div class="col-4">
-          <div class="product_card_container">
-            <a href="#prod">
-              <div class="product_image">
-                <img src="./assets/images/product_demo_1.jpg" />
-                <!-- Product META -->
-                <div class="product_meta_info">
-                  <div class="product_wishlist">
-                    <ion-icon name="heart-outline"></ion-icon>
-                  </div>
-                  <div class="product_add_to">
-                    <p><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
-                  </div>
-                </div>
-                <!-- END OF Product META -->
-              </div>
-              <!-- Product Desc -->
-              <div class="product_description">
-                <div class="product_title">Mast & Harbour</div>
-                <div class="product_details">Men Casual Shirt</div>
-                <div class="product_price_container">
-                  <p class="product_price">Rs.899</p>
-                  <p class="product_discount">Rs.1599</p>
-                  <p class="product_offer">Rs.(45% OFF)</p>
-                </div>
-              </div>
-              <!--END OF Product Desc -->
-            </a>
-          </div>
-        </div>
-        <!---------------------- END OF Product Card ------------------------->
+        <div id="products"></div>
       </div>
 
       <div class="col-12">
         <div class="browse_more">
-          <a href="#browse_more">View all</a>
+          <a href="./product.html">View all</a>
         </div>
       </div>
     </div>
@@ -302,78 +153,6 @@
       </div>
     </div>
     <!-- END OF Promotion Banner -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="newsletter_container">
-              <div class="newsletter_title">Subscribe to Our Newsletter!</div>
-              <form>
-                <div class="form_group">
-                  <input
-                    class="form_element form_email"
-                    type="email"
-                    autocomplete="off"
-                    autocapitalize="off"
-                    spellcheck="off"
-                    placeholder="Enter your e-mail"
-                  />
-                  <input
-                    type="submit"
-                    class="form_element form_submit"
-                    placeholder="Subscribe"
-                  />
-                </div>
-              </form>
-              <div class="terms">
-                <p>
-                  By entering your email, you agree to our
-                  <a href="#terms">Terms of Service and Privacy Policy.</a>
-                </p>
-              </div>
-              <div class="newsletter_social_link">
-                <div class="follow_us_text">Follow Us:</div>
-                <div class="social_icons">
-                  <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
-                </div>
-              </div>
-
-              <div class="footer_copyright">
-                <div class="footer_text">
-                  © 2021 Vimal Thanikachalam Ecommerce Store. All Rights
-                  Reserved. Ecommerce Store.
-                  <a href="#">Project Source Code.</a>
-                </div>
-                <div class="footer_payment col-12">
-                  <a href="#"
-                    ><img src="./assets/images/paypal_2_x21.jpg" alt="paypal"
-                  /></a>
-                  <a href="#"
-                    ><img src="./assets/images/Vector_x21.jpg" alt="visa"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      class="footer_mastercard"
-                      src="./assets/images/mastercard_x21.jpg"
-                      alt="mastercard"
-                  /></a>
-                  <a href="#"
-                    ><img src="./assets/images/discover_x21.jpg" alt="discover"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="./assets/images/american-express_x21.jpg"
-                      alt="american-express"
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer"></div>
   </body>
 </html>

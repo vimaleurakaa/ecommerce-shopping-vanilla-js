@@ -98,6 +98,7 @@ nav {
 
   .secondary_nav {
     background-color: #fff;
+    border-bottom: 1px solid $light_gray;
 
     & .secondary_nav_items {
       display: flex;
@@ -120,5 +121,27 @@ nav {
         @include hoverScale;
       }
     }
+  }
+}
+
+.addtoCart {
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  & #counter {
+    position: absolute;
+    top: -6px;
+    right: -14px;
+    font-size: 12px;
+    background: $primary_text;
+    color: white;
+    border-radius: 100%;
+    padding: 4px 7px;
+    z-index: 1;
+  }
+
+  &:hover {
+    color: $primary_text;
   }
 }

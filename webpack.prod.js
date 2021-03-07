@@ -11,10 +11,10 @@ module.exports = merge(common, {
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: ["html-loader"],
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: ["html-loader"],
+      // },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,

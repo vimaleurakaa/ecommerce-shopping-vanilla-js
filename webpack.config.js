@@ -14,17 +14,39 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: path.resolve(__dirname, "src", "index.html"),
       inject: "body",
     }),
+
+    new HtmlWebpackPlugin({
+      filename: "product.html",
+      template: path.resolve(__dirname, "src", "products.html"),
+      inject: "body",
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "checkout.html",
+      template: path.resolve(__dirname, "src", "checkout.html"),
+      inject: "body",
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "productdetail.html",
+      template: path.resolve(__dirname, "src", "productdetail.html"),
+      inject: "body",
+    }),
+
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: true,
       cleanAfterEveryBuildPatterns: ["dist"],
     }),
+
     new MiniCssExtractPlugin({
       filename: "./css/[contenthash].main.css",
     }),
   ],
+
   module: {
     rules: [
       {

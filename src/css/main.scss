@@ -3,17 +3,23 @@
 @import "./partials/grid";
 @import "./partials/mixins.scss";
 @import "./layouts/home";
+@import "./layouts/collections";
+@import "./layouts/product_page";
+@import "./layouts/checkout";
 
 html {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
-.spacer {
-  padding: 60px 0;
+.spacer-60 {
+  padding: 60px;
 }
 
-//
+.spacer-30 {
+  padding: 30px;
+}
+
 body {
   background-color: #fff;
   background-size: cover;
@@ -21,4 +27,11 @@ body {
 
 a {
   color: $dark_text;
+}
+
+hr {
+  border-top: 1px solid $smoke;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }

@@ -6,7 +6,7 @@ let index = 0;
 const timer = 6000;
 
 //Slider curent item active
-const changeSlide = (e) => {
+export const changeSlide = (e) => {
   if (e !== undefined) {
     index = e;
   }
@@ -25,12 +25,15 @@ const changeSlide = (e) => {
   dot[index].classList.add("slider_active");
   index++;
 };
-const interval = setInterval(changeSlide, timer);
-//change the slides on click
-for (let i = 0; i < dot.length; i++) {
-  dot[i].addEventListener("click", (e) => {
-    clearInterval(interval);
-    changeSlide(e.target.dataset.value - 1);
-  });
-}
-changeSlide();
+
+//change slides
+export const timerInterval = () => {
+  const interval = setInterval(changeSlide, timer);
+  //change the slides on click
+  for (let i = 0; i < dot.length; i++) {
+    dot[i].addEventListener("click", (e) => {
+      clearInterval(interval);
+      changeSlide(e.target.dataset.value - 1);
+    });
+  }
+};
