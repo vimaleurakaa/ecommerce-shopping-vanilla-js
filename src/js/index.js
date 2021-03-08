@@ -1,12 +1,13 @@
 import "../css/main.scss";
 import { navigation } from "./components/navigationBar";
+import { navbar_toogle } from "./utils/toggle_nav";
 import { footerItem } from "./components/footer";
 import * as _sliders_ from "./utils/sliderControls";
-import { getProducts } from "./utils/homepage";
-import { getProductsList } from "./utils/productsList_page";
+import { getApiRequest } from "./utils/homepage";
+import { getProductRequest } from "./utils/productsList_page";
 import { addToCrat, productCounter } from "./utils/addToCart";
 import { checkout } from "./utils/checkoutPage";
-import "./utils/productDetailPage";
+import { productDetails } from "./utils/productDetailPage";
 
 const img = require.context(
   "../assets/images",
@@ -27,16 +28,19 @@ if (
   _sliders_.changeSlide();
   _sliders_.timerInterval();
   //
-  getProducts();
+  getApiRequest();
 } else if (window.location.pathname === "/product.html") {
-  getProductsList();
+  getProductRequest();
 } else if (window.location.pathname === "/checkout.html") {
   checkout();
+} else if (window.location.pathname === "/productdetail.html") {
+  productDetails();
 }
 
 nav.innerHTML = navigation();
 footer.innerHTML = footerItem();
 
+//checkout counter
 const chekoutCounter = document.getElementById("counter");
 document.body.addEventListener("click", function (e) {
   if (e.target.id == "addToCart") {
@@ -46,3 +50,9 @@ document.body.addEventListener("click", function (e) {
   }
 });
 chekoutCounter.innerHTML = productCounter();
+
+//nav_toggle_event
+const navToggle = document.getElementById("nav_toggle");
+nav_toggle.addEventListener("click", (e) => {
+  navbar_toogle();
+});

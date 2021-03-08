@@ -1,5 +1,5 @@
 export const checkout = () => {
-  const data = JSON.parse(localStorage.getItem("productList"));
+  const data = JSON.parse(localStorage.getItem("cartProducts"));
   console.log(data);
 
   if (data != undefined) {

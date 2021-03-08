@@ -1,21 +1,26 @@
-//fetch api
-export const getProductsList = () => {
-  const fetchAPI = (url) => {
-    const response = fetch(url);
-    response
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setLocalStorageProduct(data);
-      })
-      .catch((err) => {
-        console.log(`Error fetching api : ${err}`);
-      });
-  };
+const getloaclStorageProd = JSON.parse(localStorage.getItem("products"));
 
-  fetchAPI("https://5d76bf96515d1a0014085cf9.mockapi.io/product");
-};
+export function getProductRequest() {
+  if (getloaclStorageProd == undefined) {
+    //fetch api
+    const fetchAPI = (url) => {
+      const response = fetch(url);
+      response
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setLocalStorageProduct(data);
+        })
+        .catch((err) => {
+          console.log(`Error fetching api : ${err}`);
+        });
+    };
+    fetchAPI("https://5d76bf96515d1a0014085cf9.mockapi.io/product");
+  } else {
+    setLocalStorageProduct(null);
+  }
+}
 
 function productsList(data) {
   //DOM element
@@ -26,9 +31,9 @@ function productsList(data) {
     if (data[i].isAccessory === false) {
       productsDiv.innerHTML += `
     <!---------------------- Product Card -------------------------------->
-    <div class="col-3">
-      <div class="product_card_container">
-        <a href="#prod">
+    <div class="col-md-3 col-6">
+      <div class="product_card_container prod_inner">
+        <a href="./productdetail.html?id=${data[i].id}">
           <div class="product_image">
             <img src="${data[i].preview}" />
             <!-- Product META -->
@@ -54,8 +59,8 @@ function productsList(data) {
             <div class="product_details">${data[i].brand}</div>
             <div class="product_price_container">
               <p class="product_price">Rs.${data[i].price}</p>
-              <p class="product_discount">Rs.1599</p>
             </div>
+            <p class="product_offer">Rs.(45% OFF)</p>
           </div>
           <!--END OF Product Desc -->
         </a>
@@ -66,9 +71,9 @@ function productsList(data) {
     } else {
       productAccessor.innerHTML += `
       <!---------------------- Product Card -------------------------------->
-    <div class="col-3">
-      <div class="product_card_container">
-        <a href="#prod">
+    <div class="col-md-3 col-6">
+      <div class="product_card_container prod_inner">
+        <a href="./productdetail.html?id=${data[i].id}">
           <div class="product_image">
             <img src="${data[i].preview}" />
             <!-- Product META -->
@@ -94,8 +99,8 @@ function productsList(data) {
             <div class="product_details">${data[i].brand}</div>
             <div class="product_price_container">
               <p class="product_price">Rs.${data[i].price}</p>
-              <p class="product_discount">Rs.1599</p>
             </div>
+            <p class="product_offer">Rs.(45% OFF)</p>
           </div>
           <!--END OF Product Desc -->
         </a>
@@ -108,10 +113,15 @@ function productsList(data) {
 }
 
 function setLocalStorageProduct(data) {
-  if (localStorage != undefined) {
+  if (getloaclStorageProd == undefined) {
     localStorage.setItem("products", JSON.stringify(data));
+    productsList(data);
+  } else {
+    productsList(getloaclStorageProd);
+    getSelectProduct();
   }
-  const getProducts = JSON.parse(localStorage.getItem("products"));
-  console.log(getProducts);
-  productsList(data);
+}
+
+function getSelectProduct() {
+  const product = document.getElementsByClassName("prod_inner");
 }

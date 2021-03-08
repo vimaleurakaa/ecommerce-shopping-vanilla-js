@@ -1,6 +1,8 @@
 nav {
   /***offer nav bar***/
-  & .offer_info {
+
+  .offer_info {
+    width: 100%;
     background-color: #fff;
     border-bottom: 2px solid $light_gray;
   }
@@ -45,20 +47,20 @@ nav {
       }
     }
 
-    & .offer_social_link {
-      position: relative;
-      margin: 0 16px;
-      text-decoration: none;
-      color: $grey_text;
+    // & .offer_social_link {
+    //   position: relative;
+    //   margin: 0 16px;
+    //   text-decoration: none;
+    //   color: $grey_text;
 
-      &::before {
-        @include hoverUnderline($dark_text);
-      }
+    //   &::before {
+    //     @include hoverUnderline($dark_text);
+    //   }
 
-      &:hover::before {
-        @include hoverScale;
-      }
-    }
+    //   &:hover::before {
+    //     @include hoverScale;
+    //   }
+    // }
   }
 
   /***menu navigation desktop***/
@@ -68,6 +70,7 @@ nav {
     background-color: #fff;
     align-items: center;
     padding: 12px 0;
+    width: 100%;
 
     & .nav_utils {
       display: flex;
@@ -99,6 +102,7 @@ nav {
   .secondary_nav {
     background-color: #fff;
     border-bottom: 1px solid $light_gray;
+    width: 100%;
 
     & .secondary_nav_items {
       display: flex;
@@ -144,4 +148,69 @@ nav {
   &:hover {
     color: $primary_text;
   }
+}
+
+//////////////////////////////////////////
+
+.brand_logo {
+  width: 140px;
+}
+
+.mobile_menu {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid $smoke;
+  z-index: 1;
+}
+
+.mobile_menu #nav_link {
+  display: none;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.mobile_menu a {
+  color: $dark-gray;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  border-bottom: 1px solid $smoke;
+}
+
+.mobile_menu a.icon {
+  // pointer-events: none;
+  cursor: pointer;
+  background: $primary_text;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 12px;
+  color: #fff;
+}
+
+.mobile_menu .mob_nav_links:hover {
+  color: #fff;
+  background-color: $primary_text;
+}
+
+.active {
+  background-color: #ffffff;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile_menu {
+    display: none;
+  }
+
+  .desktop_nav {
+    display: block !important;
+  }
+}
+
+.desktop_nav {
+  display: none;
 }

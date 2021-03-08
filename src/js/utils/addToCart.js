@@ -2,14 +2,14 @@ export const addToCrat = (data) => {
   let productDetails = [];
   let totalCount = 0;
 
-  if (localStorage.getItem("productList") == undefined) {
+  if (localStorage.getItem("cartProducts") == undefined) {
     data.quantity = 1;
     data.totalPrice = data.quantity * data.price;
     productDetails.push(JSON.parse(JSON.stringify(data)));
-    localStorage.setItem("productList", JSON.stringify(productDetails));
+    localStorage.setItem("cartProducts", JSON.stringify(productDetails));
     totalCount = 1;
   } else {
-    productDetails = JSON.parse(localStorage.getItem("productList"));
+    productDetails = JSON.parse(localStorage.getItem("cartProducts"));
     let foundAtPos = -1;
 
     for (let i = 0; i < productDetails.length; i++) {
@@ -26,13 +26,13 @@ export const addToCrat = (data) => {
       productDetails[foundAtPos].totalPrice = (
         productDetails[foundAtPos].quantity * productDetails[foundAtPos].price
       ).toString();
-      localStorage.setItem("productList", JSON.stringify(productDetails));
+      localStorage.setItem("cartProducts", JSON.stringify(productDetails));
       totalCount++;
     } else {
       data.quantity = 1;
       data.totalPrice = data.quantity * data.price;
       productDetails.push(JSON.parse(JSON.stringify(data)));
-      localStorage.setItem("productList", JSON.stringify(productDetails));
+      localStorage.setItem("cartProducts", JSON.stringify(productDetails));
       totalCount++;
     }
   }
@@ -42,10 +42,10 @@ export const addToCrat = (data) => {
 
 export const productCounter = () => {
   let totalCount = 0;
-  if (localStorage.getItem("productList") == undefined) {
+  if (localStorage.getItem("cartProducts") == undefined) {
     totalCount = 0;
   } else {
-    let productList = JSON.parse(localStorage.getItem("productList"));
+    let productList = JSON.parse(localStorage.getItem("cartProducts"));
     for (let i = 0; i < productList.length; i++) {
       totalCount += Number(productList[i].quantity);
     }

@@ -1,6 +1,6 @@
 footer {
   background-color: $footer_gray;
-  padding: 97px 0 30px 0;
+  padding: 52px 20px;
 }
 
 .newsletter_container {
@@ -15,7 +15,7 @@ footer {
 }
 
 form {
-  width: 50%;
+  width: 100%;
   margin: auto;
 
   .form_group {
@@ -64,7 +64,7 @@ form {
 }
 
 .terms {
-  margin: 14px 0;
+  margin: 26px 0;
 }
 .terms p {
   font-size: 12px;
@@ -143,4 +143,14 @@ form {
 
 .footer_mastercard {
   width: 24px !important;
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    padding: 97px 0 30px 0;
+  }
+
+  form {
+    width: 50% !important;
+  }
 }

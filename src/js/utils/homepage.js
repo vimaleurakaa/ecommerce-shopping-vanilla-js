@@ -1,29 +1,37 @@
-//fetch api
-export const getProducts = () => {
-  const fetchAPI = (url) => {
-    const response = fetch(url);
-    response
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setLocalStorage(data);
-      })
-      .catch((err) => {
-        console.log(`Error fetching api : ${err}`);
-      });
-  };
+const getloaclStorage = JSON.parse(localStorage.getItem("products"));
 
-  fetchAPI("https://5d76bf96515d1a0014085cf9.mockapi.io/product");
-};
+export function getApiRequest() {
+  if (getloaclStorage == undefined) {
+    //fetch api
+    const fetchAPI = (url) => {
+      const response = fetch(url);
+      response
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setLocalStorage(data);
+        })
+        .catch((err) => {
+          console.log(`Error fetching api : ${err}`);
+        });
+    };
+
+    fetchAPI("https://5d76bf96515d1a0014085cf9.mockapi.io/product");
+    console.log("api is fetching!!!");
+  } else {
+    setLocalStorage(null);
+  }
+}
+
 function products(data) {
   //DOM element
   const productDiv = document.getElementById("products");
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     productDiv.innerHTML += `
         <!---------------------- Product Card -------------------------------->
-            <div class="col-4">
+            <div class="col-md-3 col-6">
               <div class="product_card_container">
                 <a href="#prod">
                   <div class="product_image">
@@ -51,9 +59,9 @@ function products(data) {
                     <div class="product_details">${data[i].brand}</div>
                     <div class="product_price_container">
                       <p class="product_price">Rs.${data[i].price}</p>
-                      <p class="product_discount">Rs.1599</p>
-                      <p class="product_offer">Rs.(45% OFF)</p>
+                    
                     </div>
+                    <p class="product_offer">Rs.(45% OFF)</p>
                   </div>
                   <!--END OF Product Desc -->
                 </a>
@@ -65,10 +73,10 @@ function products(data) {
 }
 
 function setLocalStorage(data) {
-  if (localStorage != undefined) {
+  if (getloaclStorage == undefined) {
     localStorage.setItem("products", JSON.stringify(data));
+    products(data);
+  } else {
+    products(getloaclStorage);
   }
-  const getProducts = JSON.parse(localStorage.getItem("products"));
-  console.log(getProducts);
-  products(data);
 }
