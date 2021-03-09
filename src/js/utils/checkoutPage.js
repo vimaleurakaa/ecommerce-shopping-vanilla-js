@@ -31,9 +31,12 @@ const renderCheckout = (data) => {
       </div>
       <div class="checkout_prod_brand">Brand : ${data[i].brand}</div>
       <div class="checkout_prod_qty">Quantity : ${data[i].quantity}</div>
+      <div class="details_container">
       <div class="checkout_prod_price">Price : ${data[i].totalPrice}</div>
+      <button class="delete" data-id="${data[i].id}" >Delete</button>
+      </div>
     </div>
-    <button class="delete" data-id="${data[i].id}" >Delete Item</button>
+   
   </div>
     `;
   }
