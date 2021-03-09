@@ -53,9 +53,9 @@ export const productDetails = () => {
     <div class="p_product_preview">
       <div class="p_product_preview_title">Product Preview</div>
       <div class="p_product_preview_thumb">
-      ${Object.values(getloaclStorage[productData].photos).map(
-        (photos) => `<img src="${photos}" />`
-      )}
+      ${Object.values(getloaclStorage[productData].photos)
+        .map((photos) => `<img src="${photos}" />`)
+        .join("")}
       </div>
     </div>
 
@@ -69,7 +69,14 @@ export const productDetails = () => {
 
     <div class="product_cart_buttons">
       <div class="product_add_to_cart">
-        <p><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
+        <p id="addToCart" class="product_id" 
+        data-id="${getloaclStorage[productData].id}"
+        data-image="${getloaclStorage[productData].preview}"
+        data-brand="${getloaclStorage[productData].brand}"
+        data-name="${getloaclStorage[productData].name}"
+        data-price="${
+          getloaclStorage[productData].price
+        }"  ><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
       </div>
 
       <div class="product_add_to_wishlist">

@@ -124,6 +124,19 @@
   margin-top: 10px;
 }
 
+.loader {
+  display: none;
+  text-align: center;
+  & p {
+    margin: 14px 0;
+  }
+
+  & img {
+    width: 40px;
+  }
+  transition: all 0.2s ease;
+}
+
 @media only screen and (min-width: 768px) {
   .checkout_offer {
     margin-top: 40px !important;

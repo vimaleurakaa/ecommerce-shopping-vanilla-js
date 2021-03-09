@@ -42,18 +42,19 @@ function productsList(data) {
                 <ion-icon name="heart-outline"></ion-icon>
               </div>
               <div class="product_add_to">
-            <p id="addToCart" class="product_id" 
+              <a id="addToCart" class="product_id"
                 data-id="${data[i].id}"
                 data-image="${data[i].preview}"
                 data-brand="${data[i].brand}"
                 data-name="${data[i].name}"
                 data-price="${data[i].price}"      
-                ><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
+                ><ion-icon name="bag-outline"></ion-icon> Add to Cart</a>
               </div>
             </div>
             <!-- END OF Product META -->
           </div>
           <!-- Product Desc -->
+          <a href="./productdetail.html?id=${data[i].id}">
           <div class="product_description">
             <div class="product_title">${data[i].name}</div>
             <div class="product_details">${data[i].brand}</div>
@@ -62,6 +63,7 @@ function productsList(data) {
             </div>
             <p class="product_offer">Rs.(45% OFF)</p>
           </div>
+          </a>
           <!--END OF Product Desc -->
         </a>
       </div>
@@ -82,18 +84,19 @@ function productsList(data) {
                 <ion-icon name="heart-outline"></ion-icon>
               </div>
               <div class="product_add_to">
-                <p id="addToCart" class="product_id" 
+                <a id="addToCart" class="product_id" 
                 data-id="${data[i].id}"
                 data-image="${data[i].preview}"
                 data-brand="${data[i].brand}"
                 data-name="${data[i].name}"
                 data-price="${data[i].price}"  
-                ><ion-icon name="bag-outline"></ion-icon> Add to Cart</p>
+                ><ion-icon name="bag-outline"></ion-icon> Add to Cart</a>
               </div>
             </div>
             <!-- END OF Product META -->
           </div>
           <!-- Product Desc -->
+          <a href="./productdetail.html?id=${data[i].id}">
           <div class="product_description">
             <div class="product_title">${data[i].name}</div>
             <div class="product_details">${data[i].brand}</div>
@@ -102,6 +105,7 @@ function productsList(data) {
             </div>
             <p class="product_offer">Rs.(45% OFF)</p>
           </div>
+          <a>
           <!--END OF Product Desc -->
         </a>
       </div>
@@ -118,10 +122,5 @@ function setLocalStorageProduct(data) {
     productsList(data);
   } else {
     productsList(getloaclStorageProd);
-    getSelectProduct();
   }
-}
-
-function getSelectProduct() {
-  const product = document.getElementsByClassName("prod_inner");
 }

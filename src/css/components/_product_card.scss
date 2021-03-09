@@ -92,13 +92,14 @@
     text-align: center;
   }
 
-  & .product_add_to p {
+  & .product_add_to .product_id {
+    cursor: pointer;
     color: $grey_text;
     font-weight: 500;
     border: 1px solid $grey_text;
     font-size: 13px;
     text-transform: uppercase;
-    padding: 4px 0;
+    padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;

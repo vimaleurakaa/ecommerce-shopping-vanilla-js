@@ -7,6 +7,7 @@
   & img {
     width: 100%;
     margin: auto;
+    border: 1px solid $smoke;
   }
 }
 
@@ -63,6 +64,7 @@
       width: 50px;
       margin: 12px 12px 16px 0;
       border-radius: 3px;
+      border: 1px solid $smoke;
     }
   }
 }
