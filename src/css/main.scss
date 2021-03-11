@@ -1,11 +1,13 @@
+@import "./vendors/grid.min.css";
 @import "./variables/colors";
 @import "./partials/resets";
-@import "./partials/grid";
 @import "./partials/mixins.scss";
 @import "./layouts/home";
 @import "./layouts/collections";
 @import "./layouts/product_page";
 @import "./layouts/checkout";
+@import "./components/toast";
+@import "./layouts/thankyou";
 
 html {
   font-family: "Poppins", sans-serif;
@@ -14,6 +16,18 @@ html {
 
 .spacer-60 {
   padding: 60px;
+}
+
+.mobile_spacer {
+  padding: 30px;
+}
+
+.mobile_spacer_40 {
+  padding: 40px;
+}
+
+.spacer-20 {
+  padding: 20px;
 }
 
 .spacer-30 {
@@ -34,4 +48,13 @@ hr {
   border-bottom: none;
   border-left: none;
   border-right: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile_spacer {
+    padding: 0;
+  }
+  .mobile_spacer_40 {
+    padding: 0;
+  }
 }

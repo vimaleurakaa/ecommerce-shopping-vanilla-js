@@ -14,6 +14,8 @@
 
   <body>
     <div id="nav"></div>
+    <div id="toast"></div>
+    <div class="mobile_spacer"></div>
 
     <!-- END OF Navigation Menu -->
     <!-- Banner Slider -->
@@ -29,7 +31,16 @@
         </div>
 
         <div class="slides_images">
-          <img src="./assets/images/banner_1.jpg" />
+          <img
+            class="desktop_banner"
+            src="./assets/images/banner_1.jpg"
+            alt="banner"
+          />
+          <img
+            class="mobile_banner"
+            src="./assets/images/banner_1_mob.jpg"
+            alt="banner"
+          />
         </div>
       </div>
 
@@ -44,7 +55,16 @@
         </div>
 
         <div class="slides_images">
-          <img src="./assets/images/banner_2.jpg" />
+          <img
+            class="desktop_banner"
+            src="./assets/images/banner_2.jpg"
+            alt="banner"
+          />
+          <img
+            class="mobile_banner"
+            src="./assets/images/banner_2_mob.jpg"
+            alt="banner"
+          />
         </div>
       </div>
 
@@ -59,7 +79,16 @@
         </div>
 
         <div class="slides_images">
-          <img src="./assets/images/banner_3.jpg" />
+          <img
+            class="desktop_banner"
+            src="./assets/images/banner_3.jpg"
+            alt="banner"
+          />
+          <img
+            class="mobile_banner"
+            src="./assets/images/banner_3_mob.jpg"
+            alt="banner"
+          />
         </div>
       </div>
 
@@ -80,29 +109,32 @@
       </div>
     </div>
     <!-- END OF Offer Label -->
+    <div class="spacer-30"></div>
 
     <!-- Product Display Container -->
-    <div class="display_container">
-      <div class="row">
-        <div class="col-6 display_col">
-          <a href="#">
-            <div class="display_image">
-              <img src="./assets/images/new_collection_display.jpg" />
+    <div class="container">
+      <div class="display_container">
+        <div class="row">
+          <div class="col-md-6 display_col">
+            <a href="./product.html">
+              <div class="display_image">
+                <img src="./assets/images/new_collection_display.jpg" />
+              </div>
+            </a>
+            <div class="display_button">
+              <a href="./product.html">New Collection's</a>
             </div>
-          </a>
-          <div class="display_button">
-            <a href="#">New Collection's</a>
           </div>
-        </div>
 
-        <div class="col-6 display_col">
-          <a href="#">
-            <div class="display_image">
-              <img src="./assets/images/trend_collection_display.jpg" />
+          <div class="col-md-6 display_col">
+            <a href="./product.html">
+              <div class="display_image">
+                <img src="./assets/images/trend_collection_display.jpg" />
+              </div>
+            </a>
+            <div class="display_button">
+              <a href="./product.html">Trending Collection's</a>
             </div>
-          </a>
-          <div class="display_button">
-            <a href="#">Trending Collection's</a>
           </div>
         </div>
       </div>
@@ -111,7 +143,7 @@
 
     <!-- TOP Products title -->
     <div class="container">
-      <div class="popular_content col-12">
+      <div class="popular_content col-md-12">
         <h2>Top Products of This Week!</h2>
         <p>Don't Miss Today's Featured Deals</p>
       </div>
@@ -119,11 +151,10 @@
     <!-- END OF Products title -->
 
     <div class="container">
-      <div class="row">
-        <div id="products"></div>
-      </div>
+      <div id="products" class="row"></div>
 
-      <div class="col-12">
+      <div class="spacer-20"></div>
+      <div class="col-md-12">
         <div class="browse_more">
           <a href="./product.html">View all</a>
         </div>
@@ -132,7 +163,7 @@
 
     <!-- TOP Promotion title -->
     <div class="container">
-      <div class="popular_content col-12 title_promo">
+      <div class="popular_content col-md-12 title_promo">
         <h2>The Youth Store</h2>
         <p>Wear your character with attitude.</p>
       </div>
@@ -142,7 +173,7 @@
     <!-- Promotion Banner -->
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
           <div class="promotion_banner">
             <img
               src="./assets/images/desktop_youth_banner.jpg"
@@ -152,6 +183,7 @@
         </div>
       </div>
     </div>
+    <div class="spacer-30"></div>
     <!-- END OF Promotion Banner -->
     <div id="footer"></div>
   </body>

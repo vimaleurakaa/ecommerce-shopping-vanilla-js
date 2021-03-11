@@ -37,6 +37,12 @@ module.exports = {
       inject: "body",
     }),
 
+    new HtmlWebpackPlugin({
+      filename: "thankyou.html",
+      template: path.resolve(__dirname, "src", "thankyou.html"),
+      inject: "body",
+    }),
+
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: true,
       cleanAfterEveryBuildPatterns: ["dist"],
