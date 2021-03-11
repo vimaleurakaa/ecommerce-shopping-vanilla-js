@@ -1,10 +1,7 @@
 export const productDetails = () => {
   const productId = window.location.search.slice(1).split("=")[1];
-  console.log(productId);
 
   const getloaclStorage = JSON.parse(localStorage.getItem("products"));
-  console.log(getloaclStorage);
-
   let productData = -1;
 
   for (let i = 0; i < getloaclStorage.length; i++) {
@@ -15,11 +12,9 @@ export const productDetails = () => {
 
   if (productData > -1) {
     const productDiv = document.getElementById("productDetail");
-    console.log(productDiv);
-
     productDiv.innerHTML += `<div class="col-md-6">
     <div class="product_preview">
-      <img src="${getloaclStorage[productData].preview}" />
+      <img id="product_IMAGE" src="${getloaclStorage[productData].preview}" />
     </div>
     </div>
     <div class="col-md-6">
@@ -54,7 +49,10 @@ export const productDetails = () => {
       <div class="p_product_preview_title">Product Preview</div>
       <div class="p_product_preview_thumb">
       ${Object.values(getloaclStorage[productData].photos)
-        .map((photos) => `<img src="${photos}" />`)
+        .map(
+          (photos) =>
+            `<img class="thumbImages" data-id="${photos}" src="${photos}" />`
+        )
         .join("")}
       </div>
     </div>
@@ -89,13 +87,21 @@ export const productDetails = () => {
     </div>
     </div>`;
   }
+  updateProductthumbnail();
 };
 
-{
-  /* <li><img src="./assets/images/product_demo_1.jpg" /></li>
-        <li><img src="./assets/images/product_demo_1.jpg" /></li>
-        <li><img src="./assets/images/product_demo_1.jpg" /></li>
-        <li><img src="./assets/images/product_demo_1.jpg" /></li>
-        <li><img src="./assets/images/product_demo_1.jpg" /></li>
-        <li><img src="./assets/images/product_demo_1.jpg" /></li> */
-}
+const updateProductthumbnail = () => {
+  const productImage = document.getElementById("product_IMAGE");
+  const thumb_div = document.getElementsByClassName("thumbImages");
+
+  for (let i = 0; i < thumb_div.length; i++) {
+    thumb_div[i].addEventListener("click", function (e) {
+      productImage.src = e.target.dataset.id;
+      const current = document.getElementsByClassName("border_image");
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace("border_image", "");
+      }
+      this.className = "border_image";
+    });
+  }
+};
