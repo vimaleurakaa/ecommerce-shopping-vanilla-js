@@ -10,12 +10,22 @@ module.exports = merge(common, {
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
 
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "async",
+  //     minSize: 20000,
+  //     maxSize: 10000,
+  //     minChunks: 1,
+  //   },
+  // },
+
   module: {
     rules: [
       // {
       //   test: /\.html$/,
       //   use: ["html-loader"],
       // },
+
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,

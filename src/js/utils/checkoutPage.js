@@ -1,5 +1,3 @@
-import { placeOrder } from "./createOrderApi";
-
 export const checkout = () => {
   const data = JSON.parse(localStorage.getItem("cartProducts"));
 
@@ -51,13 +49,16 @@ const totalPrice = (data) => {
   const vatAmount = document.getElementById("vatAmount");
   const order = document.getElementById("placeOrder");
 
-  for (let i = 0; i < data.length; i++) {
-    price = price + parseInt(data[i].totalPrice);
+  if (data != undefined && data.length > 0) {
+    for (let i = 0; i < data.length; i++) {
+      price = price + parseInt(data[i].totalPrice);
+    }
   }
+
   let vatamount = (4 / 100) * price;
   let totalPriceGST = price + vatamount;
 
-  if (data.length == 0) {
+  if (data == undefined || data.length == 0) {
     price = 0;
     totalPriceGST = 0;
     vatamount = 0;

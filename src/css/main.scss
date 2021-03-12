@@ -50,6 +50,10 @@ hr {
   border-right: none;
 }
 
+.border_image {
+  border: 1px solid $primary_text !important;
+}
+
 @media only screen and (min-width: 768px) {
   .mobile_spacer {
     padding: 0;
