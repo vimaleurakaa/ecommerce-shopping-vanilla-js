@@ -2,6 +2,8 @@
 
 This repository contains Ecommerce Project built using Pure JavaScript, no other framework or library used.
 
+#### [LIVE DEMO](https://help.github.com/articles/set-up-git/).
+
 ## Tech Stack
 
 | Modules/Script |
@@ -28,7 +30,7 @@ Now you can move further to create the branch and start contributing !!
 
 ## How to start ? 🎪
 
-#### If you don't have git on your machine, [install](https://help.github.com/articles/set-up-git/) it.
+#### If you don't have git on your machine, [install](https://ecommerce-c620f.web.app/).
 
 ## Fork this repository 🚀
 
