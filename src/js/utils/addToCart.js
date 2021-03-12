@@ -36,8 +36,6 @@ export const addToCrat = (data) => {
       totalCount++;
     }
   }
-
-  console.log(productDetails, totalCount);
 };
 
 export const productCounter = () => {

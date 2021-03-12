@@ -24,5 +24,5 @@ function toastApperance() {
 
   setTimeout(() => {
     toastId.classList.remove("toast_visible");
-  }, 3000);
+  }, 1000);
 }
