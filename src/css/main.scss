@@ -54,6 +54,16 @@ hr {
   border: 1px solid $primary_text !important;
 }
 
+.pageloader {
+  position: absolute;
+  background: url("../assets/images/loader_andy.gif") no-repeat center;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
 @media only screen and (min-width: 768px) {
   .mobile_spacer {
     padding: 0;

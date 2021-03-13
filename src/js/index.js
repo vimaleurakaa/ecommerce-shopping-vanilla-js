@@ -29,7 +29,15 @@ if (
   //sliders
   _sliders_.changeSlide();
   _sliders_.timerInterval();
-  //
+
+  //Page Loader
+  document.addEventListener("readystatechange", () => {
+    const loader = document.getElementById("loader");
+    if (document.readyState === "complete") {
+      setTimeout(() => loader.classList.remove("pageloader"), 200);
+    }
+  });
+
   getApiRequest();
 } else if (window.location.pathname === "/product.html") {
   getProductRequest();
